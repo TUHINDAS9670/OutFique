@@ -12,7 +12,7 @@ const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [navDrawerOpen, setNavDrawerOpen] = useState(false);
   const { cart } = useSelector((state) => state.cart);
-  const {user}=useSelector((state)=>state.auth);
+  const { user } = useSelector((state) => state.auth);
 
   const cartItemCount =
     cart?.products?.reduce((total, product) => total + product.quantity, 0) ||
@@ -101,6 +101,7 @@ const Navbar = () => {
         toggleCartDrawer={toggleCartDrawer}
       />
       {/* Mobile navigation */}
+
       <div
         className={`fixed top-0 left-0 w-3/4 sm:w-1/2 md:w-1/3 h-full bg-white shadow-lg transform transition-transform duration-300 z-50 ${
           navDrawerOpen ? "translate-x-0" : "-translate-x-full"
@@ -146,6 +147,11 @@ const Navbar = () => {
               Bottom Wear
             </Link>
           </nav>
+
+          {/* Added Search for Mobile */}
+          <div className="mt-6">
+            <SearchBar />
+          </div>
         </div>
       </div>
     </div>
