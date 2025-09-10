@@ -90,8 +90,8 @@ const Navbar = () => {
           </div>
 
           {/* three bars */}
-          <button onClick={toggleNavDrawer}>
-            <HiMiniBars3BottomRight className="h-6 w-6" />
+          <button onClick={toggleNavDrawer} className="md:hidden">
+            <HiMiniBars3BottomRight className="h-6 w-6 text-gray-700" />
           </button>
         </div>
       </nav>
